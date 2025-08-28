@@ -1,6 +1,6 @@
 <template>
-  <div class="overflow-x-hidden">
-    <router-view />
+  <div class="bg-black min-h-screen">
+    <h1>hello</h1>
   </div>
 </template>
 

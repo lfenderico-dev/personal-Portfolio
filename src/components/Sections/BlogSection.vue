@@ -1,7 +1,5 @@
 <template>
-  <div class="overflow-x-hidden">
-    <router-view />
-  </div>
+  <div></div>
 </template>
 
 <script setup lang="ts"></script>
