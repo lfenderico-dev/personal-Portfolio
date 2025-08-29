@@ -3,7 +3,7 @@
     <h1 class="text-center mx-auto my-8 text-xl md:text-2xl 2xl:text-3xl font-bold">
       <i class="fa-solid fa-at"></i>Lorenzo-Fenderico
     </h1>
-    <NavBar />
+    <NavBar @selection="handleSelection" />
     <h1
       class="text-7xl md:text-8xl 2xl:text-9xl mr-[10%] ml-[5%] xl:mr-[30%] my-[5%] font-bold flex justify-center"
     >
@@ -24,10 +24,10 @@
     />
   </div>
 
-  <AboutSection />
-  <SkillsSection />
-  <ProjectsSection />
-  <BlogSection />
+  <AboutSection v-if="currentlySelected == 'About'" />
+  <SkillsSection v-if="currentlySelected == 'Skills'" />
+  <ProjectsSection v-if="currentlySelected == 'Projects'" />
+  <BlogSection v-if="currentlySelected == 'Blog'" />
 </template>
 
 <script setup lang="ts">
@@ -36,6 +36,14 @@ import AboutSection from '@/components/Sections/AboutSection.vue'
 import BlogSection from '@/components/Sections/BlogSection.vue'
 import ProjectsSection from '@/components/Sections/ProjectsSection.vue'
 import SkillsSection from '@/components/Sections/SkillsSection.vue'
+import { ref } from 'vue'
+
+const currentlySelected = ref<string | null>(null)
+
+const handleSelection = (selection: string) => {
+  currentlySelected.value = selection
+  console.log(currentlySelected.value)
+}
 </script>
 
 <style scoped></style>
