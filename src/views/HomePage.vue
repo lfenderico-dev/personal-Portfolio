@@ -1,27 +1,39 @@
 <template>
   <div>
     <h1 class="text-center mx-auto my-8 text-xl md:text-2xl 2xl:text-3xl font-bold">
-      <i class="fa-solid fa-at"></i>Lorenzo-Fenderico
+      <i class="fa-solid fa-at"></i>Lorenzo - Fenderico
     </h1>
     <NavBar @selection="handleSelection" />
-    <h1
-      class="text-7xl md:text-8xl 2xl:text-9xl mr-[10%] ml-[5%] xl:mr-[30%] my-[5%] font-bold flex justify-center"
-    >
-      Breach & Build
-    </h1>
-    <p
-      class="text-[80%] md:text-[85%] lg:text-[120%] text-left ml-[25%] mr-[10%] md:ml-[30%] xl:ml-[40%]"
-    >
-      Hello! It's me Lorenzo, a self-taught penetration tester and developer. I love breaking into
-      networks and building beautiful web experiences. Whether I'm hunting for vulnerabilities or
-      crafting the perfect user interface, I'm always learning something new. Security and code are
-      my passions—and I'm here to share what I've discovered along the way.
-    </p>
 
-    <img
-      src="@/assets/photo/myself.webp"
-      class="rounded-full size-75 md:size-100 2xl:size-120 object-cover mx-auto my-[5%]"
-    />
+    <div
+      class="flex flex-col lg:flex-row my-[10%] mx-[10%] lg:mx-[5%] lg:my-[5%] gap-2 lg:gap-14 items-center"
+    >
+      <div class="flex flex-col gap-6 xl:gap-10 lg:w-[50%] p-4">
+        <h1 class="text-5xl lg:text-7xl xl:text-8xl 2xl:text-9xl text-left font-bold">
+          Pentester/ Developer
+        </h1>
+        <div class="flex flex-col bg-black p-8 gap-2 rounded-xl lg:w-[100%]">
+          <div class="flex flex-row gap-2 text-sm 2xl:text-lg">
+            <i class="fa-solid fa-circle text-red-500"></i>
+            <i class="fa-solid fa-circle text-yellow-500"></i>
+            <i class="fa-solid fa-circle text-green-500"></i>
+          </div>
+          <span class="text-white text-sm xl:text-lg 2xl:text-xl"
+            ><strong class="text-emerald-500">computer: ~$ </strong>Greetings, fellow humans!
+            <i class="fa-solid fa-face-smile-wink text-yellow-500 text-lg"></i
+          ></span>
+        </div>
+        <div class="flex flex-row text-3xl lg:text-4xl xl:text-5xl gap-4">
+          <i class="fa-brands fa-square-github"></i>
+          <i class="fa-brands fa-square-linkedin"></i>
+          <i class="fa-brands fa-square-x-twitter"></i>
+        </div>
+      </div>
+      <img
+        src="@/assets/photo/computerSprite.svg"
+        class="size-75 lg:size-90 xl:size-120 2xl:size-160 object-cover mx-auto my-[5%] lg:my-auto"
+      />
+    </div>
   </div>
 
   <AboutSection v-if="currentlySelected == 'About'" />
