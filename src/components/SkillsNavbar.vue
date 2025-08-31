@@ -4,7 +4,7 @@
       <button
         @click="((skillset = 'Tools'), sendSkillsetInfo())"
         class="px-6 py-2 rounded-xl"
-        :class="{ 'bg-black text-white': skillset == 'Tools' || null }"
+        :class="{ 'bg-black text-white': skillset == 'Tools' || skillset == null }"
       >
         Tools
       </button>

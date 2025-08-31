@@ -1,13 +1,7 @@
 <template>
+  <NavBar />
   <div>
-    <h1 class="text-center mx-auto my-8 text-xl md:text-2xl 2xl:text-3xl font-bold">
-      <i class="fa-solid fa-at"></i>Lorenzo - Fenderico
-    </h1>
-    <NavBar @selection="handleSelection" />
-
-    <div
-      class="flex flex-col lg:flex-row my-[10%] mx-[10%] lg:mx-[5%] lg:my-[5%] gap-2 lg:gap-14 items-center"
-    >
+    <div class="flex flex-col lg:flex-row mx-[10%] lg:mx-[5%] gap-2 lg:gap-14 items-center">
       <div class="flex flex-col gap-6 xl:gap-10 lg:w-[50%] p-4">
         <h1 class="text-5xl lg:text-7xl xl:text-8xl 2xl:text-9xl text-left font-bold">
           Pentester/ Developer
@@ -36,10 +30,10 @@
     </div>
   </div>
 
-  <AboutSection v-if="currentlySelected == 'About'" />
-  <SkillsSection v-if="currentlySelected == 'Skills'" />
-  <ProjectsSection v-if="currentlySelected == 'Projects'" />
-  <BlogSection v-if="currentlySelected == 'Blog'" />
+  <AboutSection id="About" />
+  <SkillsSection id="Skills" />
+  <ProjectsSection id="Projects" />
+  <BlogSection id="Blog" />
 </template>
 
 <script setup lang="ts">
@@ -48,14 +42,6 @@ import AboutSection from '@/components/Sections/AboutSection.vue'
 import BlogSection from '@/components/Sections/BlogSection.vue'
 import ProjectsSection from '@/components/Sections/ProjectsSection.vue'
 import SkillsSection from '@/components/Sections/SkillsSection.vue'
-import { ref } from 'vue'
-
-const currentlySelected = ref<string | null>(null)
-
-const handleSelection = (selection: string) => {
-  currentlySelected.value = selection
-  console.log(currentlySelected.value)
-}
 </script>
 
 <style scoped></style>

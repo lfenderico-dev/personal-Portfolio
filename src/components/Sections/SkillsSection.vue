@@ -14,7 +14,7 @@
     </div>
 
     <div>
-      <ToolsSection v-if="skillSelection == 'Tools'" />
+      <ToolsSection v-if="skillSelection == 'Tools' || skillSelection == null" />
       <WebDevSection v-if="skillSelection == 'Web development'" />
       <LanguagesSection v-if="skillSelection == 'Languages'" />
       <ProgrammingLanguages v-if="skillSelection == 'Programming languages'" />
@@ -32,7 +32,7 @@ import WebDevSection from '../skillSections/WebDevSection.vue'
 import SkillsNavbar from '../SkillsNavbar.vue'
 import ProgrammingLanguages from '../skillSections/ProgrammingLanguages.vue'
 
-const skillSelection = ref<string>('')
+const skillSelection = ref<string | null>(null)
 
 const handleSkillset = (skillset: string) => {
   skillSelection.value = skillset

@@ -1,47 +1,47 @@
 <template>
-  <div
-    class="flex flex-row gap-2 bg-black text-white text-sm md:text-lg 2xl:text-2xl rounded-full w-fit mx-auto px-2 py-2 xl font-bold"
-  >
-    <button
-      @click="((selected = 'About'), sendToParent())"
-      class="rounded-full p-2"
-      :class="{ 'bg-white text-black': selected == 'About' || null }"
+  <div class="sticky top-0 z-50 my-4">
+    <div
+      class="flex flex-row gap-2 bg-white/50 backdrop-blur-md border-b border-white/20 text-black text-sm md:text-lg 2xl:text-2xl w-full px-2 py-2 xl font-bold justify-center"
     >
-      About
-    </button>
-    <button
-      class="rounded-full p-2"
-      :class="{ 'bg-white text-black': selected == 'Skills' }"
-      @click="((selected = 'Skills'), sendToParent())"
-    >
-      Skills
-    </button>
-    <button
-      class="rounded-full p-2"
-      :class="{ 'bg-white text-black': selected == 'Projects' }"
-      @click="((selected = 'Projects'), sendToParent())"
-    >
-      Projects
-    </button>
-    <button
-      class="rounded-full p-2"
-      :class="{ 'bg-white text-black': selected == 'Blog' }"
-      @click="((selected = 'Blog'), sendToParent())"
-    >
-      Blog
-    </button>
+      <button
+        class="rounded-xl p-2 px-4"
+        @click="((selected = 'About'), scrollToSection('About'))"
+        :class="{ 'bg-black text-white': selected == 'About' }"
+      >
+        About
+      </button>
+      <button
+        class="rounded-xl p-2 px-4"
+        @click="((selected = 'Skills'), scrollToSection('Skills'))"
+        :class="{ 'bg-black text-white': selected == 'Skills' }"
+      >
+        Skills
+      </button>
+      <button
+        class="rounded-xl p-2 px-4"
+        @click="((selected = 'Projects'), scrollToSection('Projects'))"
+        :class="{ 'bg-black text-white': selected == 'Projects' }"
+      >
+        Projects
+      </button>
+      <button
+        class="rounded-xl p-2 px-4"
+        @click="((selected = 'Blog'), scrollToSection('Blog'))"
+        :class="{ 'bg-black text-white': selected == 'Blog' }"
+      >
+        Blog
+      </button>
+    </div>
   </div>
 </template>
 
 <script setup lang="ts">
 import { ref } from 'vue'
 
-const emit = defineEmits(['selection'])
+const selected = ref<null | string>(null)
 
-const selected = ref<string | null>(null)
-
-const sendToParent = () => {
-  emit('selection', selected.value)
+const scrollToSection = (id: string) => {
+  document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
 }
 </script>
 
