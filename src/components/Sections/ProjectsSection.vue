@@ -26,6 +26,7 @@ const projects = [
     tag1: 'VueJs',
     tag2: 'Tailwindcss',
     tag3: 'Typescript',
+    tag4: 'Landing page',
     Title: 'Slice&Dice',
     Description:
       'Slice and Dice is a pizza restaurant that makes fresh, delicious pizzas with bold flavors. Visit our website to check out the menu, order online, and see our latest deals. Great pizza is just a click away!',
