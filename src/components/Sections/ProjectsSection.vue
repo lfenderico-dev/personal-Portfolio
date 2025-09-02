@@ -9,7 +9,7 @@
       </h1>
     </div>
 
-    <div>
+    <div class="overflow-y-auto">
       <NewProject v-for="project in projects" :key="project.id" v-bind="project" />
     </div>
   </div>
